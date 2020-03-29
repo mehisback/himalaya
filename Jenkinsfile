@@ -28,7 +28,7 @@ pipeline {
 
     stage('deploy') {
       steps {
-        sh 'echo "rsync the build to prod servers"'
+        sh 'echo1 "rsync the build to prod servers"'
       }
     }
 
