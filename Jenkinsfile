@@ -9,8 +9,20 @@ pipeline {
     }
 
     stage('Testing') {
-      steps {
-        sh 'echo "Testing has begun"'
+      parallel {
+        stage('Testing') {
+          steps {
+            sh 'echo "Testing has begun"'
+          }
+        }
+
+        stage('Testing P1') {
+          agent any
+          steps {
+            sh 'echo "testing 123"'
+          }
+        }
+
       }
     }
 
