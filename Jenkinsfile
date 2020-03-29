@@ -26,5 +26,11 @@ pipeline {
       }
     }
 
+    stage('deploy') {
+      steps {
+        sh 'echo "rsync the build to prod servers"'
+      }
+    }
+
   }
 }
